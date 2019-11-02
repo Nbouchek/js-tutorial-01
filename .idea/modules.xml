@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../typescript-training/03-loops-and-arrays/03-loops-and-arrays.iml" filepath="$PROJECT_DIR$/../../typescript-training/03-loops-and-arrays/03-loops-and-arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics-01-starting-project.iml" filepath="$PROJECT_DIR$/basics-01-starting-project.iml" />
+    </modules>
+  </component>
+</project>
