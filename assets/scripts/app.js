@@ -7,15 +7,44 @@ function getUserInput() {
   return enteredNumber;
 }
 
-function getDescription(enteredNumber) {
-  return `${currentResult} + ${enteredNumber}`;
-}
-
-function add() {
-  const enteredNumber = getUserInput();
-  const calcDescription = getDescription(enteredNumber);
-  currentResult = currentResult + enteredNumber;
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
   outputResult(currentResult, calcDescription);
 }
 
+function getOperands() {
+  const initialResult = currentResult;
+  const enteredNumber = getUserInput();
+  return { enteredNumber, initialResult };
+}
+
+// define functions
+function add() {
+  const { enteredNumber, initialResult } = getOperands();
+  currentResult = currentResult + enteredNumber;
+  createAndWriteOutput("+", initialResult, enteredNumber);
+}
+
+function subtract() {
+  const { enteredNumber, initialResult } = getOperands();
+  currentResult = currentResult - enteredNumber;
+  createAndWriteOutput("-", initialResult, enteredNumber);
+}
+
+function multiply() {
+  const { enteredNumber, initialResult } = getOperands();
+  currentResult = currentResult * enteredNumber;
+  createAndWriteOutput("x", initialResult, enteredNumber);
+}
+
+function divide() {
+  const { enteredNumber, initialResult } = getOperands();
+  currentResult = currentResult / enteredNumber;
+  createAndWriteOutput("/", initialResult, enteredNumber);
+}
+
+// add event listeners
 addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
