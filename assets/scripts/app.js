@@ -1,6 +1,6 @@
 const defaultResult = 0;
 
-let currentResult = defaultResult; // can be changed, notice the camel case notation, cannot start with a digit
+let currentResult = defaultResult; 
 
 function getUserInput() {
   const enteredNumber = parseInt(userInput.value);
@@ -21,25 +21,25 @@ function getOperands() {
 // define functions
 function add() {
   const { enteredNumber, initialResult } = getOperands();
-  currentResult = currentResult + enteredNumber;
+  currentResult += enteredNumber;
   createAndWriteOutput("+", initialResult, enteredNumber);
 }
 
 function subtract() {
   const { enteredNumber, initialResult } = getOperands();
-  currentResult = currentResult - enteredNumber;
+  currentResult -= enteredNumber;
   createAndWriteOutput("-", initialResult, enteredNumber);
 }
 
 function multiply() {
   const { enteredNumber, initialResult } = getOperands();
-  currentResult = currentResult * enteredNumber;
+  currentResult *= enteredNumber;
   createAndWriteOutput("x", initialResult, enteredNumber);
 }
 
 function divide() {
   const { enteredNumber, initialResult } = getOperands();
-  currentResult = currentResult / enteredNumber;
+  currentResult /= enteredNumber;
   createAndWriteOutput("/", initialResult, enteredNumber);
 }
 
