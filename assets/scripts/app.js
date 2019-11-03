@@ -3,13 +3,10 @@ let currentResult = defaultResult; // can be changed, notice the camel case nota
 
 function add(num1, num2) {
   const result = num1 + num2;
-  alert("The result is " + result);
+  return result;
 }
 
-add(2, 472);
-add(12, 472);
-
-currentResult += ((currentResult + 10) * 3) / 2 - 1; // termplate literal;
+currentResult = add(1, 3);
 
 let calculatorDecription = `${currentResult} = (100 * 3) / 2 - 1`;
 let errorMessage = "'An errors' " + "occurred";
