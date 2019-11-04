@@ -35,33 +35,41 @@ function getOperands() {
   return { enteredNumber, initialResult };
 }
 
+function calculateResult(clculationType) {
+  const { enteredNumber, initialResult } = getOperands();
+  let mathOperator;
+  if (clculationType === "ADD") {
+    currentResult += enteredNumber;
+    mathOperator = "+";
+  } else if (clculationType === "SUBTRACT") {
+    currentResult -= enteredNumber;
+    mathOperator = "-";
+  } else if (clculationType === "MULTIPLY") {
+    currentResult *= enteredNumber;
+    mathOperator = "x";
+  } else if (clculationType === "DIVIDE") {
+    currentResult /= enteredNumber;
+    mathOperator = "/";
+  }
+  createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+  writeToLog(clculationType, initialResult, enteredNumber, currentResult);
+}
+
 // define functions
 function add() {
-  const { enteredNumber, initialResult } = getOperands();
-  currentResult += enteredNumber;
-  createAndWriteOutput("+", initialResult, enteredNumber);
-  writeToLog("ADD", initialResult, enteredNumber, currentResult);
+  calculateResult("ADD");
 }
 
 function subtract() {
-  const { enteredNumber, initialResult } = getOperands();
-  currentResult -= enteredNumber;
-  createAndWriteOutput("-", initialResult, enteredNumber);
-  writeToLog("SUBTRCUT", initialResult, enteredNumber, currentResult);
+  calculateResult("SUBTRACT");
 }
 
 function multiply() {
-  const { enteredNumber, initialResult } = getOperands();
-  currentResult *= enteredNumber;
-  createAndWriteOutput("x", initialResult, enteredNumber);
-  writeToLog("MULTIPLY", initialResult, enteredNumber, currentResult);
+  calculateResult("MULTIPLY");
 }
 
 function divide() {
-  const { enteredNumber, initialResult } = getOperands();
-  currentResult /= enteredNumber;
-  createAndWriteOutput("/", initialResult, enteredNumber);
-  writeToLog("DIVIDE", initialResult, enteredNumber, currentResult);
+  calculateResult("DIVIDE");
 }
 
 // add event listeners
