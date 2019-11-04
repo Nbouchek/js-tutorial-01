@@ -23,7 +23,14 @@ function add() {
   const { enteredNumber, initialResult } = getOperands();
   currentResult += enteredNumber;
   createAndWriteOutput("+", initialResult, enteredNumber);
-  logEntries.push(enteredNumber);
+  const logEntry = {
+    operation: "ADD",
+    prevResult: initialResult,
+    number: enteredNumber,
+    result: currentResult
+  };
+  logEntries.push(logEntry);
+  console.log(logEntry.number);
   console.log(logEntries);
 }
 
