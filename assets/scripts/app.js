@@ -35,52 +35,6 @@ function getOperands() {
   return { enteredNumber, initialResult };
 }
 
-// function calculateResult(clculationType) {
-//   const { enteredNumber, initialResult } = getOperands();
-//   let mathOperator;
-//   if (enteredNumber) {
-//     switch (clculationType) {
-//       case "ADD":
-//         currentResult += enteredNumber;
-//         mathOperator = "+";
-//         break;
-//       case "SUBTRACT":
-//         currentResult -= enteredNumber;
-//         mathOperator = "-";
-//         break;
-//       case "MULTIPLY":
-//         currentResult *= enteredNumber;
-//         mathOperator = "x";
-//         break;
-//       case "DIVIDE":
-//         currentResult /= enteredNumber;
-//         mathOperator = "/";
-//         break;
-//       default:
-//         return;
-//     }
-//   }
-//   createAndWriteOutput(mathOperator, initialResult, enteredNumber);
-//   writeToLog(clculationType, initialResult, enteredNumber, currentResult);
-// }
-
-// define functions
-// function add() {
-//   calculateResult("ADD");
-// }
-
-// function subtract() {
-//   calculateResult("SUBTRACT");
-// }
-
-// function multiply() {
-//   calculateResult("MULTIPLY");
-// }
-
-// function divide() {
-//   calculateResult("DIVIDE");
-// }
-
 function calculate(operation) {
   const { enteredNumber, initialResult } = getOperands();
   let mathOperator;
@@ -110,7 +64,7 @@ function calculate(operation) {
 }
 
 // add event listeners
-addBtn.addEventListener("click", calculate.bind(this, 'ADD'));
-subtractBtn.addEventListener("click", calculate.bind(this, 'SUBTRACT'));
-multiplyBtn.addEventListener("click", calculate.bind(this, 'MULTIPLY'));
-divideBtn.addEventListener("click", calculate.bind(this, 'DIVIDE'));
+addBtn.addEventListener("click", calculate.bind(this, "ADD"));
+subtractBtn.addEventListener("click", calculate.bind(this, "SUBTRACT"));
+multiplyBtn.addEventListener("click", calculate.bind(this, "MULTIPLY"));
+divideBtn.addEventListener("click", calculate.bind(this, "DIVIDE"));
